@@ -36,11 +36,11 @@ target-version = ["py312"]
 include = "\\.pyi?$"
 
 [tool.pytest.ini_options]
-addopts = "--cov=gypt_matplotlib --cov-report html"
+addopts = "--cov=py_nasa_api --cov-report html"
 
 [tool.coverage.report]
 omit = [
-    "py_nasa_api/__init__.py",
+    # "py_nasa_api/__init__.py",
     "py_nasa_api/__main__.py",
 ]
 exclude_also = [
