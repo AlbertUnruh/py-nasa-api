@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "config:recommended",
+    ":assignAndReview(AlbertUnruh)",
+    ":disableDependencyDashboard"
+  ],
+  "labels": ["dependencies", "{{depName}}"],
+  "ignorePaths": ["requirements.txt"],
+  "separateMinorPatch": true,
+  "rangeStrategy": "bump"
+}
