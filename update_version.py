@@ -9,7 +9,7 @@ VERSION_INIT_REGEX: re.Pattern[str] = re.compile(r"^(__version__\s*=\s*[\'\"])([
 VERSION_TOML_REGEX: re.Pattern[str] = re.compile(r"^(version\s*=\s*[\'\"])([^\'\"]*)([\'\"])", re.MULTILINE)
 
 # Paths to files to update
-INIT_PATH: Path = Path(__file__).parent / "gypt_matplotlib/__init__.py"
+INIT_PATH: Path = Path(__file__).parent / "py_nasa_api/__init__.py"
 TOML_PATH: Path = Path(__file__).parent / "pyproject.toml"
 
 
