@@ -14,3 +14,9 @@
 
 # py-nasa-api
 NASA API wrapper written in Python
+
+> [!WARNING]
+> Work in progress!
+
+> [!NOTE]
+> Progress can be tracked here: https://github.com/AlbertUnruh/py-nasa-api/issues/1
