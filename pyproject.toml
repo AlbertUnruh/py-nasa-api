@@ -22,6 +22,8 @@ build-backend = "poetry.core.masonry.api"
 requires-poetry = ">=2.0"
 
 [tool.poetry.dependencies]
+aiohttp = "^3.11.16"
+orjson = "^3.10.16"
 
 [tool.poetry.group.dev.dependencies]
 black = ">=25.1.0"  # major and minor aren't semantically versioned but on year and month
@@ -126,7 +128,7 @@ ignore = [
     "G002",   # Logging statement uses `%`
     "G004",   # Logging statement uses f-string
 ]
-per-file-ignores = {"tests/*.py" = ["D103", "S101", "FBT001"], "update_version.py" = ["T201"]}
+per-file-ignores = {"tests/*.py" = ["D103", "S101", "FBT001"], "update_version.py" = ["T201"], "py_nasa_api/__init__.py" = ["PLW0127"]}
 
 [tool.ruff.lint.flake8-annotations]
 mypy-init-return = true
