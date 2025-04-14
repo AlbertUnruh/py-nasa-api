@@ -1,4 +1,5 @@
 __all__ = (
+    "warn_if_base_is_incorrect",
     "warn_if_is_default_api_key",
     "warn_if_path_is_incorrect",
 )
@@ -37,7 +38,7 @@ def warn_if_is_default_api_key(api_key: str) -> bool:
 
 
 def warn_if_path_is_incorrect(path: str) -> bool:
-    """Warn if the path is incomplete.
+    """Warn if the path is incorrect.
 
     Parameters
     ----------
@@ -71,4 +72,28 @@ def warn_if_path_is_incorrect(path: str) -> bool:
                 stacklevel=3,
             )
             warned = True
+    return warned
+
+
+def warn_if_base_is_incorrect(base: str) -> bool:
+    """Warn if the base is incorrect.
+
+    Parameters
+    ----------
+    base : str
+        The base to check.
+
+    Returns
+    -------
+    bool
+        True if warning was issued.
+    """
+    warned = False
+    if base.endswith("/"):
+        warn(
+            "The API-base contains a leading `/`!",
+            category=UserWarning,
+            stacklevel=3,
+        )
+        warned = True
     return warned

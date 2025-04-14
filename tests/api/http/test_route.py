@@ -3,7 +3,6 @@ import pytest
 
 # first party
 from py_nasa_api.api.http import route
-from py_nasa_api.api.http.route import BaseRoute
 
 
 @pytest.mark.parametrize(
@@ -40,5 +39,23 @@ def test_base_route_no_base():
     ],
 )
 def test_base_route_warn(path: str, should_warn: bool, recwarn: pytest.WarningsRecorder):
-    BaseRoute("GET", path)
+    route.BaseRoute("GET", path)
+    assert len(recwarn) == should_warn
+
+
+@pytest.mark.parametrize(
+    ("base", "should_warn"),
+    [
+        ("", False),
+        ("/", True),
+        ("https://127.0.0.1", False),
+        ("https://127.0.0.1/", True),
+        ("https://127.0.0.1/api", False),
+        ("https://127.0.0.1/api/", True),
+    ],
+)
+def test_route_warn(base: str, should_warn: bool, recwarn: pytest.WarningsRecorder):
+    class _Route(route.BaseRoute):
+        BASE = base
+
     assert len(recwarn) == should_warn

@@ -7,7 +7,7 @@ from urllib.parse import quote as _uri_quote
 
 # first party
 from py_nasa_api.client.utils.misc import add_missing_parameters
-from py_nasa_api.client.utils.warning import warn_if_path_is_incorrect
+from py_nasa_api.client.utils.warning import warn_if_base_is_incorrect, warn_if_path_is_incorrect
 
 
 class BaseRoute:
@@ -31,6 +31,11 @@ class BaseRoute:
         self.path = path
         self.method = method
         self.params = parameters
+
+    def __init_subclass__(cls):
+        """Make sure that the base is correct for the API."""
+        if warn_if_base_is_incorrect(cls.BASE):
+            cls.BASE = cls.BASE.removesuffix("/")
 
     @property
     def resolved_path(self) -> str:
