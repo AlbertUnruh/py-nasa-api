@@ -10,7 +10,7 @@ __all__ = (
 import sys
 
 
-__version__: str = "0.1.0"
+__version__: str = "0.1.1"
 __repository__: str = "https://github.com/AlbertUnruh/py-nasa-api/"
 
 
