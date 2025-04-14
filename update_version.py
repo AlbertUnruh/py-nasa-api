@@ -6,7 +6,7 @@ from pathlib import Path
 
 # RegEx to find versions
 VERSION_INIT_REGEX: re.Pattern[str] = re.compile(r"^(__version__\s*=\s*__version__\s*#\s*)(\S+)(.{0})$", re.MULTILINE)
-VERSION_CNST_REGEX: re.Pattern[str] = re.compile(r"^(__version__\s*=\s*[\'\"])([^\'\"]*)([\'\"])", re.MULTILINE)
+VERSION_CNST_REGEX: re.Pattern[str] = re.compile(r"^(__version__(?::.+)?\s*=\s*[\'\"])([^\'\"]*)([\'\"])", re.MULTILINE)
 VERSION_TOML_REGEX: re.Pattern[str] = re.compile(r"^(version\s*=\s*[\'\"])([^\'\"]*)([\'\"])", re.MULTILINE)
 
 # Paths to files to update
