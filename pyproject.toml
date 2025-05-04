@@ -23,7 +23,7 @@ requires-poetry = ">=2.0"
 
 [tool.poetry.dependencies]
 aiohttp = "^3.11.16"
-orjson = "^3.10.16"
+orjson = "^3.10.18"
 
 [tool.poetry.group.dev.dependencies]
 black = ">=25.1.0"  # major and minor aren't semantically versioned but on year and month
