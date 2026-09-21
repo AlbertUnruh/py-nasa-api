@@ -3,7 +3,6 @@ import re
 import sys
 from pathlib import Path
 
-
 # RegEx to find versions
 VERSION_INIT_REGEX: re.Pattern[str] = re.compile(r"^(__version__\s*=\s*__version__\s*#\s*)(\S+)(.{0})$", re.MULTILINE)
 VERSION_CNST_REGEX: re.Pattern[str] = re.compile(r"^(__version__(?::.+)?\s*=\s*[\'\"])([^\'\"]*)([\'\"])", re.MULTILINE)
